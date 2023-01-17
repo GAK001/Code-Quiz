@@ -70,7 +70,7 @@ function checkAnswer(event) {
   if (selectedAnswer === correctAnswer) {
     feedback.classList.remove("hide");
     feedback.textContent = "Correct!";
-
+    score += 5;
     timeLeft += 5;
     questionIndex++;
     if (questionIndex === quizQuestions.length) {
