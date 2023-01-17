@@ -1,14 +1,16 @@
 var clearScoresEl = document.getElementById("clear");
 
-clearScoresEl.addEventListener("click", function () {
-  localStorage.clear();
-});
+if (clearScoresEl) {
+  clearScoresEl.addEventListener("click", function () {
+    localStorage.clear();
+  });
+}
 
 // Get the high scores from local storage
 var highScores = JSON.parse(localStorage.getItem("highS"));
 
 // Sort the high scores array in descending order by the result property
-highScores.sort(function (a, b) {
+(highScores || []).sort(function (a, b) {
   return b.result - a.result;
 });
 
